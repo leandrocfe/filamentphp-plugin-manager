@@ -42,12 +42,7 @@ collections:
         widget: "select"
         multiple: true
         required: true
-        options:
-          - form-builder
-          - form-field
-          - spatie
-          - table-builder
-          - table-column
+        options: [action, analytics, developer-tool, form-builder, form-editor, form-field, form-layout, infolist-entry, kit, panel-authentication, panel-authorization, spatie, table-builder, table-column, theme, widget]
         hint: "The categories should be an array of categories that your plugin is related to. Available categories can be found in the content/plugin_categories directory."
 
       - label: "Description"
