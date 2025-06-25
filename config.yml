@@ -75,13 +75,13 @@ collections:
         hint: "If you have multiple documentation URLs, please use this field."
         fields:
           - label: "v2"
-            name: "2"
+            name: "v2"
             widget: "string"
           - label: "v3"
-            name: "3"
+            name: "v3"
             widget: "string"
           - label: "v4"
-            name: "4"
+            name: "v4"
             widget: "string"
 
       - label: "GitHub Repository"
@@ -100,9 +100,9 @@ collections:
         multiple: true
         required: true
         options:
-          - v2
-          - v3
-          - v4
+          - 2
+          - 3
+          - 4
         hint: "Select the versions of Filament that your plugin supports."
 
       - { label: "Publish Date", name: "publish_date", widget: "datetime", format: "YYYY-MM-DD", default: "" }
