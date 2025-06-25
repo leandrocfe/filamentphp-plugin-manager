@@ -16,7 +16,7 @@ CMS.registerWidget('auto-author-slug', createClass({
         return h('input', {
             type: 'text',
             value: this.props.value || '',
-            readOnly: true,
+            readOnly: false,
             style: {
                 backgroundColor: '#f5f5f5',
                 border: '1px solid #ccc',
