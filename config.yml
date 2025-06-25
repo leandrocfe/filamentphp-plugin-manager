@@ -50,12 +50,40 @@ collections:
         widget: "hidden"
         default: "https://discord.com/channels/883083792112300104"
 
+      - label: "Docs Type"
+        name: "docs_type"
+        widget: "select"
+        options:
+          - { label: "Single version", value: "single" }
+          - { label: "Multiple versions", value: "multiple" }
+        default: "single"
+
+      - label: "Docs URL"
+        name: "docs_url"
+        widget: "string"
+        required: false
+        hint: "URL to the README of the plugin"
+        conditional:
+          field: "docs_type"
+          value: "single"
+
       - label: "Docs URLs"
         name: "docs_urls"
         widget: "object"
+        required: false
         fields:
-          - { label: "v3", name: "v3", widget: "string", required: false }
-          - { label: "v2", name: "v2", widget: "string", required: false }
+          - label: "v2"
+            name: "v2"
+            widget: "string"
+          - label: "v3"
+            name: "v3"
+            widget: "string"
+          - label: "v4"
+            name: "v4"
+            widget: "string"
+        conditional:
+          field: "docs_type"
+          value: "multiple"
 
       - { label: "GitHub Repository", name: "github_repository", widget: "string", required: true }
 
