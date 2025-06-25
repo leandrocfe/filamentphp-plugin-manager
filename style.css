@@ -1,0 +1,17 @@
+/* Esconde o logo padrão */
+.nc-app-header .nc-app-header-logo {
+    display: none;
+}
+
+/* Adiciona seu logo customizado */
+.nc-app-header:before {
+    content: '';
+    display: block;
+    width: 160px;
+    height: 40px;
+    background-image: url('/seu-logo.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left center;
+    margin-left: 1rem;
+}

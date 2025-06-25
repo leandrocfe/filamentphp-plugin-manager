@@ -1,0 +1,73 @@
+backend:
+  name: github
+  repo: leandrocfe/filamentphp.test
+  branch: main
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+publish_mode: editorial_workflow
+
+collections:
+  - name: "plugins"
+    label: "Plugins"
+    folder: "plugins"
+    create: true
+    slug: "{{fields.author_slug}}-{{fields.slug}}"
+    extension: "md"
+    format: "yaml-frontmatter"
+    fields:
+      - { label: "Plugin Name", name: "name", widget: "string", required: true }
+
+      - { label: "Slug", name: "slug", widget: "string", required: true, pattern: [ "^[a-z0-9-]+$", "Use apenas letras minúsculas, números e hífens." ] }
+
+      - label: "Author Slug"
+        name: "author_slug"
+        widget: "auto-author-slug"
+        required: true
+
+      - label: "Categories"
+        name: "categories"
+        widget: "select"
+        multiple: true
+        required: true
+        options:
+          - form-builder
+          - form-field
+          - spatie
+          - table-builder
+          - table-column
+
+      - label: "Description"
+        name: "description"
+        widget: "text"
+        required: true
+        min_length: 20
+        max_length: 300
+
+      - label: "Discord URL"
+        name: "discord_url"
+        widget: "hidden"
+        default: "https://discord.com/channels/883083792112300104"
+
+      - label: "Docs URLs"
+        name: "docs_urls"
+        widget: "object"
+        fields:
+          - { label: "v3", name: "v3", widget: "string", required: false }
+          - { label: "v2", name: "v2", widget: "string", required: false }
+
+      - { label: "GitHub Repository", name: "github_repository", widget: "string", required: true }
+
+      - { label: "Has Dark Theme?", name: "has_dark_theme", widget: "boolean", default: false }
+
+      - { label: "Has Translations?", name: "has_translations", widget: "boolean", default: false }
+
+      - label: "Supported Versions"
+        name: "versions"
+        widget: "select"
+        multiple: true
+        required: true
+        options: [ 2, 3, 4 ]
+
+      - { label: "Publish Date", name: "publish_date", widget: "datetime", format: "YYYY-MM-DD", default: "" }
