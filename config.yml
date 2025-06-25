@@ -45,29 +45,18 @@ collections:
       - label: "Discord URL"
         name: "discord_url"
         widget: "hidden"
-        default: "https://discord.com/channels/883083792112300104"
-
-      - label: "Docs Type"
-        name: "docs_type"
-        widget: "select"
-        options:
-          - { label: "Single version", value: "single" }
-          - { label: "Multiple versions", value: "multiple" }
-        default: "single"
 
       - label: "Docs URL"
         name: "docs_url"
         widget: "string"
         required: false
-        hint: "URL to the README of the plugin"
-        conditional:
-          field: "docs_type"
-          value: "single"
+        hint: "If you have multiple documentation URLs, please use the 'Docs URLs' field instead."
 
       - label: "Docs URLs"
         name: "docs_urls"
         widget: "object"
         required: false
+        hint: "If you have multiple documentation URLs, please use this field."
         fields:
           - label: "v2"
             name: "v2"
@@ -78,9 +67,6 @@ collections:
           - label: "v4"
             name: "v4"
             widget: "string"
-        conditional:
-          field: "docs_type"
-          value: "multiple"
 
       - { label: "GitHub Repository", name: "github_repository", widget: "string", required: true }
 
@@ -93,6 +79,9 @@ collections:
         widget: "select"
         multiple: true
         required: true
-        options: [ 2, 3, 4 ]
+        options:
+          - v2
+          - v3
+          - v4
 
       - { label: "Publish Date", name: "publish_date", widget: "datetime", format: "YYYY-MM-DD", default: "" }
