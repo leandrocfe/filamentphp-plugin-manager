@@ -2,6 +2,7 @@ CMS.registerWidget('auto-author-slug', createClass({
     componentDidMount() {
         const trySetUsername = () => {
             const user = window.CMS && window.CMS.currentUser && window.CMS.currentUser();
+            console.log(user);
             if (user && user.username) {
                 this.props.onChange(user.username.toLowerCase());
             } else {
