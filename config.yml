@@ -2,6 +2,7 @@ backend:
   name: github
   repo: leandrocfe/filamentphp.test
   branch: main
+  open_authoring: true
 
 media_folder: "public/uploads"
 public_folder: "/uploads"
