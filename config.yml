@@ -17,11 +17,24 @@ collections:
     extension: "md"
     format: "yaml-frontmatter"
     fields:
-      - { label: "Plugin Name", name: "name", widget: "string", required: true }
+      - label: "Plugin Name"
+        name: "name"
+        widget: "string"
+        required: true
+        hint: "The name of the plugin, e.g., 'Spatie Media Library'."
 
-      - { label: "Slug", name: "slug", widget: "string", required: true, pattern: [ "^[a-z0-9-]+$", "Use apenas letras minúsculas, números e hífens." ] }
+      - label: "Slug"
+        name: "slug"
+        widget: "string"
+        required: true
+        pattern: [ "^[a-z0-9-]+$", "The slug should be lowercase and can only contain letters, numbers, and hyphens. It will be used in the URL." ]
+        hint: "The slug should match the current filename and should be lowercase and can only contain letters, numbers, and hyphens."
 
-      - { label: "Author Slug", name: "author_slug", widget: "string", required: true }
+      - label: "Author Slug"
+        name: "author_slug"
+        widget: "string"
+        required: true
+        hint: "The author_slug should match the slug of the author profile you created earlier."
 
       - label: "Categories"
         name: "categories"
@@ -34,6 +47,7 @@ collections:
           - spatie
           - table-builder
           - table-column
+        hint: "The categories should be an array of categories that your plugin is related to. Available categories can be found in the content/plugin_categories directory."
 
       - label: "Description"
         name: "description"
@@ -41,6 +55,7 @@ collections:
         required: true
         min_length: 20
         max_length: 300
+        hint: "The description should be a short description of your plugin. Please check the grammar and spelling of this description, preferably using Grammarly. It should be one full sentence."
 
       - label: "Discord URL"
         name: "discord_url"
@@ -50,7 +65,7 @@ collections:
         name: "docs_url"
         widget: "string"
         required: false
-        hint: "If you have multiple documentation URLs, please use the 'Docs URLs' field instead."
+        hint: "The docs_url should be a URL to a public, raw Markdown file of your plugin. You can leave this blank if your documentation does not live in a raw Markdown file, but please ensure that you have filled in a url instead, where we can redirect users who are looking for the documentation. If you have content in your README that you do not want to be displayed on the website, please add a .filament-hidden class to the element. This is especially useful for banner images. If you have multiple documentation URLs, please use the 'Docs URLs' field instead."
 
       - label: "Docs URLs"
         name: "docs_urls"
@@ -68,7 +83,11 @@ collections:
             name: "v4"
             widget: "string"
 
-      - { label: "GitHub Repository", name: "github_repository", widget: "string", required: true }
+      - label: "GitHub Repository"
+        name: "github_repository"
+        widget: "string"
+        required: true
+        hint: "The github_repository should be the name of the GitHub repository where your plugin is hosted"
 
       - { label: "Has Dark Theme?", name: "has_dark_theme", widget: "boolean", default: false }
 
@@ -83,5 +102,6 @@ collections:
           - v2
           - v3
           - v4
+        hint: "Select the versions of Filament that your plugin supports."
 
       - { label: "Publish Date", name: "publish_date", widget: "datetime", format: "YYYY-MM-DD", default: "" }
