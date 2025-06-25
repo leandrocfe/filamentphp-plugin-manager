@@ -72,12 +72,15 @@ collections:
           - label: "v2"
             name: "v2"
             widget: "string"
+            required: false
           - label: "v3"
             name: "v3"
             widget: "string"
+            required: false
           - label: "v4"
             name: "v4"
             widget: "string"
+            required: false
 
       - label: "GitHub Repository"
         name: "github_repository"
