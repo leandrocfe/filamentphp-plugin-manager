@@ -21,10 +21,7 @@ collections:
 
       - { label: "Slug", name: "slug", widget: "string", required: true, pattern: [ "^[a-z0-9-]+$", "Use apenas letras minúsculas, números e hífens." ] }
 
-      - label: "Author Slug"
-        name: "author_slug"
-        widget: "auto-author-slug"
-        required: true
+      - { label: "Author Slug", name: "author_slug", widget: "string", required: true }
 
       - label: "Categories"
         name: "categories"
